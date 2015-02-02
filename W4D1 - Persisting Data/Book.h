@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Book : NSObject
+@interface Book : NSObject <NSCoding>
 
-@property (strong, nonatomic) NSString *tile;
+@property (strong, nonatomic) NSString *title;
+@property (nonatomic) int ISBNNumber;
+@property (nonatomic, strong) NSSet *authors;
+@property (nonatomic, strong) NSMutableDictionary *chapters;
 
 @end

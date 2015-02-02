@@ -38,7 +38,7 @@
 
 - (IBAction)saveButtonPressed:(id)sender {
     
-    self.detailItem.tile = self.titleTextField.text;
+    self.detailItem.title = self.titleTextField.text;
 }
 
 @end

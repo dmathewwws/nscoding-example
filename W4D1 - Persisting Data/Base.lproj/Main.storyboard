@@ -58,6 +58,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz">
+                        <barButtonItem key="leftBarButtonItem" title="Save" id="Vzb-0b-eLz">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="pGg-6v-bdr" id="qmZ-b7-kOB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PTC-fp-FNA">
                             <connections>
                                 <segue destination="Cop-lR-ddB" kind="show" identifier="showAddSegue" id="SM5-hK-zMh"/>

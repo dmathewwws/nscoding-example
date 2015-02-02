@@ -96,8 +96,6 @@
 				AFAAA8111A7F575500A43345 /* MasterViewController.m */,
 				AFAAA8351A7FBACE00A43345 /* AddViewController.h */,
 				AFAAA8361A7FBACE00A43345 /* AddViewController.m */,
-				AFAAA8131A7F575500A43345 /* DetailViewController.h */,
-				AFAAA8141A7F575500A43345 /* DetailViewController.m */,
 				AFAAA8321A7F57DF00A43345 /* Book.h */,
 				AFAAA8331A7F57DF00A43345 /* Book.m */,
 				AFAAA8161A7F575500A43345 /* Main.storyboard */,
@@ -111,6 +109,8 @@
 		AFAAA8091A7F575500A43345 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFAAA8131A7F575500A43345 /* DetailViewController.h */,
+				AFAAA8141A7F575500A43345 /* DetailViewController.m */,
 				AFAAA80A1A7F575500A43345 /* Info.plist */,
 				AFAAA80B1A7F575500A43345 /* main.m */,
 			);

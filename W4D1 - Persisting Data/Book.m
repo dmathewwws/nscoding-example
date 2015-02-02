@@ -10,12 +10,27 @@
 
 @implementation Book
 
-- (instancetype)init
-{
+- (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
-    if (self) {
-        self.tile = @"title";
+    if (!self) {
+        return nil;
     }
+    
+    self.title = [decoder decodeObjectForKey:@"title"];
+    self.ISBNNumber = [decoder decodeIntForKey:@"ISBNNumber"];
+    self.authors = [decoder decodeObjectForKey:@"authors"];
+    NSDictionary *chapersDict = [decoder decodeObjectForKey:@"chapersDict"];
+    self.chapters = [[NSMutableDictionary alloc] initWithDictionary:chapersDict copyItems:YES];
+    
     return self;
 }
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self.title forKey:@"title"];
+    [encoder encodeInt:self.ISBNNumber forKey:@"ISBNNumber"];
+    [encoder encodeObject:self.authors forKey:@"authors"];
+    [encoder encodeObject:self.chapters forKey:@"chapersDict"];
+}
+
+
 @end
