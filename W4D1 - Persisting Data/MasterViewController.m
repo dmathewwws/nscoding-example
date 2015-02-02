@@ -30,12 +30,7 @@
         self.books = [[NSMutableArray alloc] init];
     }
     
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectoryPath = [paths objectAtIndex:0];
-    NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:@"appData"];
-    
-    NSArray *savedBooks = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    NSArray *savedBooks = [NSKeyedUnarchiver unarchiveObjectWithFile:[self getFilePath]];
     if (savedBooks) {
         self.books = [savedBooks mutableCopy];
     }
@@ -101,11 +96,13 @@
 
 - (IBAction)saveButtonPressed:(id)sender {
     
+    [NSKeyedArchiver archiveRootObject:self.books toFile:[self getFilePath]];
+}
+
+-(NSString*)getFilePath{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectoryPath = [paths objectAtIndex:0];
-    NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:@"appData"];
-    
-    [NSKeyedArchiver archiveRootObject:self.books toFile:filePath];
+   return [documentsDirectoryPath stringByAppendingPathComponent:@"appData"];
 }
 
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

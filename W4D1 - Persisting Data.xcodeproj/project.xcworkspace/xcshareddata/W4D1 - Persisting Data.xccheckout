@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5B964233-B5B9-4CBB-9A53-65616EF87E1B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>W4D1 - Persisting Data</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3C86F65FEB32C229F3AFEA94E86694E5DC35CE67</key>
+		<string>https://github.com/dmathewwws/nscoding-example.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>W4D1 - Persisting Data.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3C86F65FEB32C229F3AFEA94E86694E5DC35CE67</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dmathewwws/nscoding-example.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3C86F65FEB32C229F3AFEA94E86694E5DC35CE67</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3C86F65FEB32C229F3AFEA94E86694E5DC35CE67</string>
+			<key>IDESourceControlWCCName</key>
+			<string>W4D1%20-%20Persisting%20Data</string>
+		</dict>
+	</array>
+</dict>
+</plist>
