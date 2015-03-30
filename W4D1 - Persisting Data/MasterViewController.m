@@ -28,6 +28,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
+    NSArray *savedBooks = [NSKeyedUnarchiver unarchiveObjectWithFile:[self getFilePath]];
+    if (savedBooks) {
+        self.books = [savedBooks mutableCopy];
+    }
+    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
