@@ -58,6 +58,7 @@
         Book *b = [Book new];
         b.title = self.myTextField.text;
         [self.books addObject:b];
+        [NSKeyedArchiver archiveRootObject:self.books toFile:[self getFilePath]];
         [self.tableView reloadData];
         [alert dismissViewControllerAnimated:true completion:nil];
     }]];
@@ -69,23 +70,17 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField{
-
+-(NSString*)getFilePath{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+    return [documentsDirectoryPath stringByAppendingPathComponent:@"appData"];
 }
 
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showAddSegue"]) {
-        
-        if (!self.books) {
-            self.books = [[NSMutableArray alloc] init];
-        }
-        Book *b = [[Book alloc] init];
-        [self.books insertObject:b atIndex:0];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        [[segue destinationViewController] setDetailItem:b];
+
     }
 }
 
