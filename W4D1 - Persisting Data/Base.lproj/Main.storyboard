@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -57,65 +56,11 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PTC-fp-FNA">
-                            <connections>
-                                <segue destination="Cop-lR-ddB" kind="show" identifier="showAddSegue" id="SM5-hK-zMh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="605" y="64"/>
-        </scene>
-        <!--Add View Controller-->
-        <scene sceneID="UQJ-RP-N44">
-            <objects>
-                <viewController id="Cop-lR-ddB" customClass="AddViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Uts-ZS-ZRi"/>
-                        <viewControllerLayoutGuide type="bottom" id="sbw-wf-h5V"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WOC-n3-ggo">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QDE-Rp-LMt">
-                                <rect key="frame" x="116" y="200" width="368" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Cop-lR-ddB" id="1bq-U5-Thm"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXC-Un-d9D">
-                                <rect key="frame" x="283" y="261" width="34" height="30"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="Cop-lR-ddB" eventType="touchUpInside" id="xIn-ol-O00"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="kXC-Un-d9D" firstAttribute="top" secondItem="QDE-Rp-LMt" secondAttribute="bottom" constant="31" id="1Bm-bq-8v8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QDE-Rp-LMt" secondAttribute="trailing" constant="100" id="31v-U0-JjE"/>
-                            <constraint firstItem="QDE-Rp-LMt" firstAttribute="top" secondItem="Uts-ZS-ZRi" secondAttribute="bottom" constant="136" id="7NF-lX-ImN"/>
-                            <constraint firstItem="QDE-Rp-LMt" firstAttribute="leading" secondItem="WOC-n3-ggo" secondAttribute="leadingMargin" constant="100" id="WHY-mF-11g"/>
-                            <constraint firstAttribute="centerX" secondItem="kXC-Un-d9D" secondAttribute="centerX" id="w4P-BW-QQI"/>
-                            <constraint firstAttribute="centerX" secondItem="QDE-Rp-LMt" secondAttribute="centerX" id="yzk-Yc-0KH"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="titleTextField" destination="QDE-Rp-LMt" id="rXK-jA-ZC1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="apc-2H-uQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1378" y="-361"/>
         </scene>
         <!--Detail-->
         <scene sceneID="Cn3-H9-jdl">
@@ -151,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1345" y="550"/>
+            <point key="canvasLocation" x="1407" y="64"/>
         </scene>
     </scenes>
 </document>

@@ -10,6 +10,6 @@
 
 @interface Book : NSObject
 
-@property (strong, nonatomic) NSString *tile;
+@property (strong, nonatomic) NSString *title;
 
 @end

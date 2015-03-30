@@ -10,9 +10,11 @@
 #import "DetailViewController.h"
 #import "Book.h"
 
-@interface MasterViewController ()
+@interface MasterViewController () <UITextFieldDelegate>
 
 @property NSMutableArray *books;
+@property (nonatomic) UITextField *myTextField;
+
 @end
 
 @implementation MasterViewController
@@ -26,8 +28,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-//    self.navigationItem.rightBarButtonItem = addButton;
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -40,14 +42,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (void)insertNewObject:(id)sender {
-//    if (!self.objects) {
-//        self.objects = [[NSMutableArray alloc] init];
-//    }
-//    [self.objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
+- (void)insertNewObject:(id)sender {
+    if (!self.books) {
+        self.books = [[NSMutableArray alloc] init];
+    }
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Add a Book" message:@"Enter Book Below" preferredStyle:UIAlertControllerStyleAlert];
+
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder= @"Book Name";
+        self.myTextField = textField;
+    }];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        Book *b = [Book new];
+        b.title = self.myTextField.text;
+        [self.books addObject:b];
+        [self.tableView reloadData];
+        [alert dismissViewControllerAnimated:true completion:nil];
+    }]];
+
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:true completion:nil];
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+
+}
 
 #pragma mark - Segues
 
@@ -79,7 +103,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     Book *object = self.books[indexPath.row];
-    cell.textLabel.text = object.tile;
+    cell.textLabel.text = object.title;
     return cell;
 }
 
